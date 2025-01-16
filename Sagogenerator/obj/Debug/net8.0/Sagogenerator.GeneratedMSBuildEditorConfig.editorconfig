@@ -1,0 +1,111 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Sagogenerator
+build_property.RootNamespace = Sagogenerator
+build_property.ProjectDir = C:\Users\Johan\Documents\GitHub\Fairytale-AI-Sagogenerator\Sagogenerator\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Johan\Documents\GitHub\Fairytale-AI-Sagogenerator\Sagogenerator
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/CreatingStory/CharacterCreation.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDcmVhdGluZ1N0b3J5XENoYXJhY3RlckNyZWF0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/CreatingStory/GenrePicker.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDcmVhdGluZ1N0b3J5XEdlbnJlUGlja2VyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/CreatingStory/LoadingSpinner.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDcmVhdGluZ1N0b3J5XExvYWRpbmdTcGlubmVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/CreatingStory/SavingSpinner.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDcmVhdGluZ1N0b3J5XFNhdmluZ1NwaW5uZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/CreatingStory/Stepper.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDcmVhdGluZ1N0b3J5XFN0ZXBwZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/CreatingStory/StorySetting.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDcmVhdGluZ1N0b3J5XFN0b3J5U2V0dGluZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/Layout/Footer.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcRm9vdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/Layout/Header.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcSGVhZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/Pages/AboutUs.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBYm91dFVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/Pages/Account/LogIn.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XExvZ0luLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/Pages/Account/Logout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XExvZ291dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/Pages/Account/MyProfile.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XE15UHJvZmlsZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/Pages/Account/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XFJlZ2lzdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/Pages/CreateStory.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDcmVhdGVTdG9yeS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/Pages/FindStories.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGaW5kU3Rvcmllcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/Pages/ReadStory.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZWFkU3RvcnkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/Pages/SeeStory.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZWVTdG9yeS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Johan/Documents/GitHub/Fairytale-AI-Sagogenerator/Sagogenerator/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-1y347oeu3n

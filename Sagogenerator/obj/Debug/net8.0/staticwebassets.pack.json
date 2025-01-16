@@ -1,0 +1,269 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Sagogenerator.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Sagogenerator.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Fonts\\Averia_Sans_Libre\\AveriaSansLibre-Bold.ttf",
+      "PackagePath": "staticwebassets\\Fonts\\Averia_Sans_Libre\\AveriaSansLibre-Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Fonts\\Averia_Sans_Libre\\AveriaSansLibre-BoldItalic.ttf",
+      "PackagePath": "staticwebassets\\Fonts\\Averia_Sans_Libre\\AveriaSansLibre-BoldItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Fonts\\Averia_Sans_Libre\\AveriaSansLibre-Italic.ttf",
+      "PackagePath": "staticwebassets\\Fonts\\Averia_Sans_Libre\\AveriaSansLibre-Italic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Fonts\\Averia_Sans_Libre\\AveriaSansLibre-Light.ttf",
+      "PackagePath": "staticwebassets\\Fonts\\Averia_Sans_Libre\\AveriaSansLibre-Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Fonts\\Averia_Sans_Libre\\AveriaSansLibre-LightItalic.ttf",
+      "PackagePath": "staticwebassets\\Fonts\\Averia_Sans_Libre\\AveriaSansLibre-LightItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Fonts\\Averia_Sans_Libre\\AveriaSansLibre-Regular.ttf",
+      "PackagePath": "staticwebassets\\Fonts\\Averia_Sans_Libre\\AveriaSansLibre-Regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Fonts\\Averia_Sans_Libre\\OFL.txt",
+      "PackagePath": "staticwebassets\\Fonts\\Averia_Sans_Libre\\OFL.txt"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Fonts\\Princess_Sofia\\OFL.txt",
+      "PackagePath": "staticwebassets\\Fonts\\Princess_Sofia\\OFL.txt"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Fonts\\Princess_Sofia\\PrincessSofia-Regular.ttf",
+      "PackagePath": "staticwebassets\\Fonts\\Princess_Sofia\\PrincessSofia-Regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\Bondgård.jpg",
+      "PackagePath": "staticwebassets\\Images\\Bondgård.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\Book.png",
+      "PackagePath": "staticwebassets\\Images\\Book.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\BrödernaSomBarn.JPG",
+      "PackagePath": "staticwebassets\\Images\\BrödernaSomBarn.JPG"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\Djungel2.jpg",
+      "PackagePath": "staticwebassets\\Images\\Djungel2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\Fjällen.jpg",
+      "PackagePath": "staticwebassets\\Images\\Fjällen.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\Framtiden.jpg",
+      "PackagePath": "staticwebassets\\Images\\Framtiden.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\Grön Brytare.png",
+      "PackagePath": "staticwebassets\\Images\\Grön Brytare.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\Havet.jpg",
+      "PackagePath": "staticwebassets\\Images\\Havet.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\KaraktärBakgrund.png",
+      "PackagePath": "staticwebassets\\Images\\KaraktärBakgrund.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\KrumelurPil.png",
+      "PackagePath": "staticwebassets\\Images\\KrumelurPil.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\Logga.png",
+      "PackagePath": "staticwebassets\\Images\\Logga.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\Luftballong.png",
+      "PackagePath": "staticwebassets\\Images\\Luftballong.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\PaintSlott.png",
+      "PackagePath": "staticwebassets\\Images\\PaintSlott.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\Rymden.jpg",
+      "PackagePath": "staticwebassets\\Images\\Rymden.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\asad_avatar.png",
+      "PackagePath": "staticwebassets\\Images\\asad_avatar.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\astronaut.png",
+      "PackagePath": "staticwebassets\\Images\\astronaut.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\björn.png",
+      "PackagePath": "staticwebassets\\Images\\björn.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\borås.png",
+      "PackagePath": "staticwebassets\\Images\\borås.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\check.png",
+      "PackagePath": "staticwebassets\\Images\\check.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\fanny_avatar.png",
+      "PackagePath": "staticwebassets\\Images\\fanny_avatar.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\flicka.png",
+      "PackagePath": "staticwebassets\\Images\\flicka.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\future.jpg",
+      "PackagePath": "staticwebassets\\Images\\future.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\future.webp",
+      "PackagePath": "staticwebassets\\Images\\future.webp"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\fängelse.jfif",
+      "PackagePath": "staticwebassets\\Images\\fängelse.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\fängelse.png",
+      "PackagePath": "staticwebassets\\Images\\fängelse.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\genrebakgrund.png",
+      "PackagePath": "staticwebassets\\Images\\genrebakgrund.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\glitterFlygplan.png",
+      "PackagePath": "staticwebassets\\Images\\glitterFlygplan.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\johan_avatar.png",
+      "PackagePath": "staticwebassets\\Images\\johan_avatar.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\jungle.jpg",
+      "PackagePath": "staticwebassets\\Images\\jungle.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\jungle.webp",
+      "PackagePath": "staticwebassets\\Images\\jungle.webp"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\kvist.png",
+      "PackagePath": "staticwebassets\\Images\\kvist.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\lamp_guy.png",
+      "PackagePath": "staticwebassets\\Images\\lamp_guy.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\login.png",
+      "PackagePath": "staticwebassets\\Images\\login.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\läsandebarn.png",
+      "PackagePath": "staticwebassets\\Images\\läsandebarn.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\mathias_avatar.png",
+      "PackagePath": "staticwebassets\\Images\\mathias_avatar.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\papper.png",
+      "PackagePath": "staticwebassets\\Images\\papper.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\pappersflygplan.png",
+      "PackagePath": "staticwebassets\\Images\\pappersflygplan.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\register.png",
+      "PackagePath": "staticwebassets\\Images\\register.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\rullstolemoji.png",
+      "PackagePath": "staticwebassets\\Images\\rullstolemoji.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\rymdFlygplan.png",
+      "PackagePath": "staticwebassets\\Images\\rymdFlygplan.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\sjukhus.jfif",
+      "PackagePath": "staticwebassets\\Images\\sjukhus.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\sjukhus.png",
+      "PackagePath": "staticwebassets\\Images\\sjukhus.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\sofia_avatar.png",
+      "PackagePath": "staticwebassets\\Images\\sofia_avatar.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\space.jpg",
+      "PackagePath": "staticwebassets\\Images\\space.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\Images\\söksymbol.png",
+      "PackagePath": "staticwebassets\\Images\\söksymbol.png"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\css\\Footer.css",
+      "PackagePath": "staticwebassets\\css\\Footer.css"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\css\\Header.css",
+      "PackagePath": "staticwebassets\\css\\Header.css"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\css\\buttons.css",
+      "PackagePath": "staticwebassets\\css\\buttons.css"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\css\\greenStoryContainerHome.css",
+      "PackagePath": "staticwebassets\\css\\greenStoryContainerHome.css"
+    },
+    {
+      "Id": "C:\\Users\\Johan\\Downloads\\Sagogenerator-main (1)\\Sagogenerator-main\\Sagogenerator\\Sagogenerator\\wwwroot\\css\\prenumerationCard.css",
+      "PackagePath": "staticwebassets\\css\\prenumerationCard.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Sagogenerator.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Sagogenerator.props",
+      "PackagePath": "build\\Sagogenerator.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Sagogenerator.props",
+      "PackagePath": "buildMultiTargeting\\Sagogenerator.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Sagogenerator.props",
+      "PackagePath": "buildTransitive\\Sagogenerator.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

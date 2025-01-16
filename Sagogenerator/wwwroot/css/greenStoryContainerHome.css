@@ -1,0 +1,85 @@
+﻿/* Home */
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.cardx {
+    width: 300px;
+    height: 375px;
+    max-height: 330px;
+    background-color: rgba(249, 246, 241, 1);
+    border-radius: 10px;
+    box-shadow: 0px 10px 12px rgba(0, 0, 0, 0.08), -4px -4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 0px;
+    margin: 20px;
+}
+
+    .cardx:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1), -4px -4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+.card-image-container {
+    width: 100%;
+    height: 64%;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    background-color: rgb(165, 165, 165);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-icon {
+    font-size: 40px;
+}
+
+
+.card-title {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: default;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+}
+
+.card-des {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    margin: 0;
+    font-size: 13px;
+    cursor: default;
+}
+
+.groncontainer {
+    background-color: rgba(230, 233, 215, 1);
+    margin-top: -10px;
+    margin-bottom: -13px;
+}
+
+.KollaIn {
+    padding-left: 250px;
+    padding-top: 20px;
+}
+
+.krumelurpil {
+    width: 200px;
+    height: 125px;
+    margin-left: 200px;
+}

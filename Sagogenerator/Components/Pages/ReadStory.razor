@@ -1,0 +1,41 @@
+﻿@using Sagogenerator.Models.Entities
+@using Sagogenerator.Data
+@inject AppDbContext DB
+@inject NavigationManager NM
+@page "/läs-saga/{id}"
+
+<div class="bok container">
+@*     <h3>@Story.Title</h3>
+    <p class="story">@((MarkupString)Story.Content.Replace(Environment.NewLine, "<br><br>"))</p> *@
+
+   @*  <p>@(new MarkupString(Story.Content.Replace(Environment.NewLine, "<br><br>")))</p> *@
+    <div class="sida">
+        <h3 class="times">@Story.Title</h3>
+        <p class="story">@((MarkupString)Story.Content.Replace(Environment.NewLine, "<br><br>"))</p>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    private Story Story { get; set; } = new Story();
+
+    protected override void OnInitialized()
+    {
+        int storyId;
+        if (int.TryParse(Id, out storyId))
+        {
+            Story = GetStoryById(storyId);
+        }
+        else
+        {
+            NM.NavigateTo("/"); //fungerar inte?
+        }
+    }
+    private Story GetStoryById(int id)
+    {
+        var allStories = DB.Stories.ToList();
+        return allStories.FirstOrDefault(s => s.Id == id);
+    }
+}

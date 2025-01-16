@@ -1,0 +1,20 @@
+﻿@page "/logga-ut"
+@using Microsoft.AspNetCore.Authentication
+@inject NavigationManager navigationManager
+
+<div class="text-center mt-3"><h1>Du är nu utloggad</h1></div>
+
+@code {
+    [CascadingParameter]
+    public HttpContext? HttpContext { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        if (HttpContext.User.Identity.IsAuthenticated)
+        {
+            await HttpContext.SignOutAsync();
+            navigationManager.NavigateTo("/logga-ut", true);
+        }
+    }
+}

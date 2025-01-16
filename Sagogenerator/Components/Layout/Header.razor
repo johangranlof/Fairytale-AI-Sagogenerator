@@ -1,0 +1,25 @@
+﻿<header>
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="nav-img me-lg-5 mb-1"><img src="/Images/Logga.png" alt="Hem" width="100"></a>
+            <ul class="nav col-12 col-lg-auto mb-2 d-flex flex-wrap align-items-center justify-content-center">
+                <li><a href="/skapa-saga" class="nav-link mx-4 text-black header-link"> Skapa saga</a></li>
+                <li><a href="/hitta-sagor" class="nav-link mx-4 text-black header-link">Hitta sagor</a></li>
+                <li><a href="/om-oss" class="nav-link mx-4 text-black header-link">Om oss</a></li>
+            </ul>
+            <div class="d-flex justify-content-lg-end justify-content-center flex-grow-1">
+                <AuthorizeView>
+                    <NotAuthorized>
+                        <a href="/logga-in" class="mx-2 btn btn-primary">Logga in</a>
+                        <a href="/registrera" class="mx-2 btn btn-secondary">Registrera</a>
+                    </NotAuthorized>
+                    <Authorized>
+                        <a href="/logga-ut" class="mx-2 btn btn-primary">Logga ut</a>
+                        <a href="/min-profil" class="mx-2 btn btn-secondary">Min Profil</a>
+                    </Authorized>
+                </AuthorizeView>
+            </div>
+        </div>
+    </div>
+    <img src="Images/Grön Brytare.png" class="headerbrytare" alt="" width="100%" height="20">
+</header>

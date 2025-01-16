@@ -1,0 +1,77 @@
+﻿@using Sagogenerator.Models.Entities
+@inject Data.AppDbContext DB
+
+<div class="genres">
+    <div>
+        @{
+        var genres = DB.Genres;
+        foreach (var genre in genres)
+        {
+            <div class="genre">
+                <div aria-label="Basic checkbox toggle button group" class="genreknapp">
+                    <input type="checkbox" class="btn-check genreknapp" id="btncheck@(genre.Id)" autocomplete="off" @onchange='() => CheckBoxChanged(genre)'>
+                    <label class="genreknapp btn btn-primary" for="btncheck@(genre.Id)">@genre.Name</label>
+                </div>
+            </div>
+        }
+        }
+    </div>
+</div>
+<h4 class="text-center">Eller välj själv..</h4>
+<div class="papper container d-flex justify-content-center align-items-center">
+    <form class="mb-5 mt-2">
+        <input type="text" class="form-control form-control-dark" @bind="Input">
+        <div class="container d-flex justify-content-center align-items-center mt-2">
+            <button type="button" class="btn btn-primary" @onclick="AddExtraGenre">Lägg till</button>
+        </div>
+    </form>
+</div>
+
+<div class="container d-flex justify-content-center align-items-center mt-2">
+    @if (isNewGenreAdded)
+    {
+        <p class="fw-bold text-success">@Input har lagts till som egen genre.</p>
+    }
+</div>
+
+
+@code {
+    [Parameter]
+    public Action<List<Genre>> OnGenresSelected { get; set; }
+
+    List<Genre> selectedGenres = new List<Genre>();
+
+    string Input = "";
+    bool isNewGenreAdded = false;
+
+    public List<Genre> GetSelectedGenres()
+    {
+        return selectedGenres;
+    }
+
+    void CheckBoxChanged(Genre genre)
+    {
+        if (selectedGenres.Contains(genre))
+        {
+            selectedGenres.Remove(genre);
+        }
+        else
+        {
+            selectedGenres.Add(genre);
+        }
+
+        // Call the callback function to pass selected genres to parent component
+        OnGenresSelected?.Invoke(selectedGenres);
+    }
+
+    private void AddExtraGenre()
+    {
+        if (!string.IsNullOrWhiteSpace(Input))
+        {
+            Genre newGenre = new Genre();
+            newGenre.Name = Input;
+            selectedGenres.Add(newGenre);
+            isNewGenreAdded = true;
+        }
+    }
+}

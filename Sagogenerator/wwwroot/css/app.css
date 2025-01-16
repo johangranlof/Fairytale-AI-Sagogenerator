@@ -1,0 +1,508 @@
+@charset "UTF-8";
+html, body {
+    font-family: "Averia Sans Libre";
+    background-color: rgba(249, 246, 241, 1);
+}
+
+@font-face {
+    font-family: "Averia Sans Libre";
+    src: url('../Fonts/Averia_Sans_Libre/AveriaSansLibre-Light.ttf') 
+}
+@font-face {
+    font-family: "Princess Sofia";
+    src: url('../Fonts/Princess_Sofia/PrincessSofia-Regular.ttf');
+}
+
+
+/*Huvudknapp*/
+.btn-primary {
+    --bs-btn-color: #000;
+    --bs-btn-bg: rgba(249, 246, 241, 1);
+    --bs-btn-border-color: #e0e0d1;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: rgba(238, 234, 226, 1);
+    --bs-btn-hover-border-color: #d1d1be;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #c6c98b;
+    --bs-btn-active-border-color: #c6c98b;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #0d6efd;
+    --bs-btn-disabled-border-color: #0d6efd;
+}
+/*Sekundärknapp*/
+.btn-secondary {
+    --bs-btn-color: rgba(249, 246, 241, 1);
+    --bs-btn-bg: rgba(91, 89, 60, 1);
+    --bs-btn-border-color: 5B593C;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #8b885c;
+    --bs-btn-hover-border-color: #d1d1be;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #579c3e;
+    --bs-btn-active-border-color: #77cc58;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #0d6efd;
+    --bs-btn-disabled-border-color: #0d6efd;
+}
+/*Skapa saga knapp*/
+.btn-skapasaga {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: rgba(91, 89, 60, 1);
+    --bs-btn-border-color: rgba(91, 89, 60, 1);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: rgba(139, 136, 94, 1);
+    --bs-btn-hover-border-color: rgba(139, 136, 94, 1);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: rgba(166, 162, 118, 1);
+    --bs-btn-active-border-color: rgba(166, 162, 118, 1);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: rgba(13, 110, 253, 1);
+    --bs-btn-disabled-border-color: rgba(13, 110, 253, 1);
+    border-radius: 4rem;
+    padding:1rem;
+    width: 300px;
+    margin-top: 10%;
+
+
+}
+.skapasaga-img {
+    /*Bild i skapasaga knappen*/
+    width: 20px;
+}
+    /*Stor knapp*/
+    .bigKnapp {
+    --bs-btn-color: #000;
+    --bs-btn-bg: #60d680;
+    --bs-btn-border-color: #60d680;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #80f29f;
+    --bs-btn-hover-border-color: #80f29f;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #b1de59;
+    --bs-btn-active-border-color: #b1de59;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #0d6efd;
+    --bs-btn-disabled-border-color: #0d6efd;
+    width: 300px;
+    height: 100px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    margin-top: 30%;
+}
+
+.btn-fortsätt {
+    --bs-btn-color: white;
+    --bs-btn-bg: rgba(91, 89, 60, 1);
+    --bs-btn-border-color: rgba(91, 89, 60, 1);
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #b7d9bb;
+    --bs-btn-hover-border-color: #b7d9bb;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #c5e2cd;
+    --bs-btn-active-border-color: #c5e2cd;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #5b8edf;
+    --bs-btn-disabled-border-color: #5b8edf;
+}
+
+.btn-tillbaka {
+    --bs-btn-color: #000;
+    --bs-btn-bg: rgba(230, 233, 215, 1);
+    --bs-btn-border-color: rgba(230, 233, 215, 1);
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: rgba(238, 234, 226, 1);
+    --bs-btn-hover-border-color: rgba(238, 234, 226, 1);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #c6c98b;
+    --bs-btn-active-border-color: #c6c98b;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #0d6efd;
+    --bs-btn-disabled-border-color: #0d6efd;
+}
+/*Ljus bakgrund
+.light-bg {
+    background-color: #eaebe1;
+}*/
+
+/* Register / LogIn */
+.reg-login-container {
+    width: 800px;
+    height: 700px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex: auto;
+}
+
+/* Home */
+.card-wrapper {
+    display: flex; 
+    justify-content:center; 
+    flex-wrap: wrap; 
+    padding: 20px;
+}
+
+.cardx {
+    width: 300px;
+    height: 375px;
+    max-height: 330px;
+    background-color: rgba(249, 246, 241, 1); 
+    border-radius: 10px;
+    box-shadow: 0px 10px 12px rgba(0, 0, 0, 0.08), -4px -4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: pointer;
+    padding: 10px; 
+    margin-bottom: 0px; 
+    margin: 20px;
+}
+
+.cardx:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1), -4px -4px 12px rgba(0, 0, 0, 0.08); 
+}
+
+.card-image-container {
+    width: 100%;
+    height: 64%;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    background-color: rgb(165, 165, 165);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-icon {
+    font-size: 40px; 
+}
+
+.card-title {
+    margin: 0; 
+    font-size: 17px; 
+    font-weight: 600; 
+    cursor: default; 
+    -webkit-box-orient: vertical; 
+    overflow: hidden; 
+    display: -webkit-box; 
+    -webkit-line-clamp: 1; 
+    line-clamp: 1; 
+}
+
+.card-des {
+    overflow: hidden; 
+    display: -webkit-box; 
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical; 
+    text-overflow: ellipsis; 
+    margin: 0; 
+    font-size: 13px; 
+    cursor: default; 
+}
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* Sträcka bilden så att den fyller hela området utan att behålla sina proportioner */
+    object-position: center; /* Centrera bilden inom sin container */
+}
+
+
+.groncontainer {
+    background-color: rgba(230, 233, 215, 1);
+    margin-top: -10px;
+    margin-bottom: -13px;
+}
+.KollaIn{
+    padding-left:250px;
+    padding-top:20px;
+}
+.krumelurpil {
+    width: 200px;
+    height: 125px;
+    margin-left:200px;
+}
+
+/*Footer*/
+.paintSlott {
+    width: 200px;
+
+}
+.topfooter {
+    display:flex;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    justify-content:space-between;
+}
+.bottomfooter {
+    align-items: center;
+    border-top: 0.5px solid grey;
+    display: flex;
+    padding-top: 10px;
+    padding-top: 10px;
+    justify-content: space-between;
+}
+
+.footermenu a {
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #333; /* Farg pa lanktext */
+    position: relative;
+}
+
+.footermenu a::before {
+    position: absolute;
+    left: 0px; /* Avstand fran vansterkant */
+}
+
+/*Header*/
+header {
+    background-color: rgba(230, 233, 215, 1);
+    padding-top: 20px;
+}
+.headerbrytare{
+    margin-bottom:-20px;
+}
+
+
+/*CharacterCreation*/
+.character-container {
+    background-image: url('/Images/KaraktärBakgrund.png');
+    width: 530px;
+    height: 460px;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.character-container form {
+    width: 450px;
+    margin-top: 10px;
+}
+
+/*GenrePicker*/
+.genres {
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+/*    background-image: url('/Images/genrebakgrund.png');
+    background-size: cover;*/
+/*    padding: 4%;*/
+padding-bottom: 2%;
+padding-left: 0%;
+padding-right: 0%;
+    width: 40%;
+}
+.genreknapp {
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: black;
+    border-radius: 0.75rem;
+    color: rgba( 230, 233, 215, 1);
+}
+
+.genre {
+    display: inline-block;
+    margin: 10px;
+}
+.papper {
+    background-image: url('/images/papper.png');
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    padding-top: 1rem;
+
+}
+.stortpapper {
+    background-image: url('/images/KaraktärBakgrund.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 1rem;
+    height: 50vh;
+    width: 75vw;
+    box-sizing: border-box;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.stortpapper-content {
+    text-align: left; 
+    max-width: 90%; 
+    line-height: 1rem;
+}
+.barn-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end; 
+    width: 50%; 
+
+}
+
+
+.pratandebjörn{
+    display:flex;
+    margin-bottom: 3%;
+    font-size: 22px;
+}
+/*LoadingSpinner*/
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-container {
+    text-align: center;
+}
+
+/*Stepper*/
+.stepper {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.step-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+}
+
+.step {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgba(91, 89, 60, 1);
+    margin: 10px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+    .step.active {
+        background-color: rgba(91, 89, 60, 1);
+        color: rgba(91, 89, 60, 1);
+    }
+
+.step-number {
+    font-weight: bold;
+    color: rgba(91, 89, 60, 1);
+}
+
+.step.active .step-number {
+    color: white;
+}
+
+/*StorySetting*/
+.card {
+    color: black;
+    width: 175px;
+    position: relative;
+    margin: 0%;
+    margin-top: 5%;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.5s, font-size 0.5s;
+}
+
+.card:hover {
+    transform: scale(1.2);
+    cursor:pointer;
+}
+
+.card-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    transition: font-size 0.5s;
+    background-color: rgba(255, 255, 255, 0.5);
+    width:100px;
+    border-radius: 50px;
+}
+
+/*Create Story*/
+
+.sammanfattning{
+    display:flex;
+    justify-content: space-between
+}
+.story::first-letter {
+    font-family: "Princess Sofia", cursive !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: 2.5rem;
+    line-height: 0.8;
+}
+.story {
+    line-height: 1.7;
+    padding-top: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+.times {
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+.bok {
+    position: relative;
+    padding-top: 0.5rem;
+    background-image: url('../Images/Book.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
+/*    transition: box-shadow 0.3s ease; */
+}
+
+.sida {
+
+    column-count: 2; 
+    column-gap: 5rem; 
+    padding: 1.5rem;
+    break-inside: avoid-column; 
+}
+
+
+.sida h3 {
+    margin-top: 0%;
+    text-align:center;
+}
+
+/*See Story*/
+
+.GenereradBild img{
+    width: 50px;
+}
+
+
+

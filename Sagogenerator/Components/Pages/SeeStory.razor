@@ -1,0 +1,186 @@
+﻿@page "/se-saga"
+@using Sagogenerator.Components.Services
+@using Sagogenerator.Models.Entities
+@using System.Collections.Generic
+@using Sagogenerator.Components.CreatingStory
+@using System.Text
+@using Sagogenerator.Data
+@rendermode InteractiveServer
+@inject AppDbContext DB
+@inject NavigationManager navigationManager
+@inject OpenAIService OpenAIService
+@inject IStoryService StoryService
+@inject IJSRuntime JsRuntime
+
+<div class="container mt-5">
+    <div class="bok d-flex justify-content-start align-items-center">
+        @if (!string.IsNullOrEmpty(StoryService.WholeStory))
+        {
+            <div class="sida">  
+                <p class="story">@(new MarkupString(StoryService.WholeStory.Replace(Environment.NewLine, "<br><br>")))</p>
+                
+            </div>
+        }
+    </div>
+</div>
+
+@if (ShowFinishButton)
+{
+    <div class="row justify-content-center mt-3 mb-5">
+        <div class="col-auto">
+            <button type="button" class="btn btn-primary" @onclick="Finish">Avsluta saga</button>
+            <button type="button" class="btn btn-primary" @onclick="GenerateMore">Fortsätt äventyret</button>
+        </div>
+    </div>
+}
+
+@if (ShowSaveAndContinueReadingButtons)
+{
+    ShowFinishButton = false;
+
+    <div class="row justify-content-center mt-3">
+        <div class="col-auto">
+            <AuthorizeView>
+                <NotAuthorized>
+                    <button type="button" class="btn btn-primary" @onclick="SaveStoryNotAuthorized">Spara saga</button>
+                </NotAuthorized>
+                <Authorized>
+                    <button type="button" class="btn btn-primary" @onclick="SaveStoryAuthorized">Spara saga</button>
+                </Authorized>
+            </AuthorizeView>
+        </div>
+        <div class="col-auto">
+            <button type="button" class="btn btn-primary" @onclick="Back">Tillbaka</button>
+        </div>
+    </div>
+}
+
+@if (StorySaved)
+{
+    <div class="text-success text-center mt-3">@SaveMessage</div>
+    StorySaved = false;
+}
+
+@if (IsLoading == true)
+{
+    ShowFinishButton = false;
+    ShowSaveAndContinueReadingButtons = false;
+    <LoadingSpinner IsLoading="IsLoading" />
+}
+@if (IsSaving == true)
+{
+    ShowFinishButton = false;
+    ShowSaveAndContinueReadingButtons = false;
+    <SavingSpinner IsSaving="IsSaving" />
+}
+
+<div class="col-lg-2">
+    <img src="Images/kvist.png" class="d-block mx-lg-auto img-fluid" alt="" width="600" height="600">
+</div>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+    string? userName;
+    bool StorySaved = false;
+    private string? SaveMessage;
+    bool IsLoading = false;
+    bool IsSaving = false;
+    string img = "";
+
+    GenrePicker genrePicker = new GenrePicker();
+
+    private async Task SaveStoryAuthorized()
+    {
+        IsSaving = true;
+        ShowSaveAndContinueReadingButtons = false;
+        var user = DB.Users.FirstOrDefault(x => x.Username == userName);
+        List<Genre> selectedGenres = genrePicker.GetSelectedGenres();
+        img = await OpenAIService.GenerateImageAsync(StoryService.WholeStory + "Generera en bild som passar denna sagan, den ska vara passande för barn och absolut inte innehålla någon text eller något som kan liknas vid text på bilden.");
+
+
+        Story newStory = new Story
+        {
+            Content = StoryService.WholeStory,
+            Title = StoryService.Title,
+            Genres = selectedGenres,
+            User = user,
+            Img = img
+        };
+
+        await GenerateTitle(newStory);
+        DB.Stories.Add(newStory);
+
+        foreach (var genre in selectedGenres)
+        {
+            genre.Stories.Add(newStory);
+        }
+
+        await DB.SaveChangesAsync();
+        IsSaving = false;
+        SaveMessage = newStory.Title + " sparades! Gå till din profil för att se dina sparade sagor.";
+        StorySaved = true;
+    }
+
+    private async Task SaveStoryNotAuthorized()
+    {
+        IsSaving = true;
+        ShowSaveAndContinueReadingButtons = false;
+        List<Genre> selectedGenres = genrePicker.GetSelectedGenres();
+        img = await OpenAIService.GenerateImageAsync(StoryService.WholeStory + "Generera en tecknad bild som passar denna sagans innehåll. Bilden ska inte illustera någon form av text utan endast karaktärerna inom den miljö sagan utspelar sig.");
+
+        Story newStory = new Story
+        {
+            Content = StoryService.WholeStory,
+            Title = StoryService.Title,
+            Genres = selectedGenres,
+            Img = img
+        };
+        await GenerateTitle(newStory);
+        DB.Stories.Add(newStory);
+        foreach (var genre in selectedGenres)
+        {
+            genre.Stories.Add(newStory);
+        }
+        await DB.SaveChangesAsync();
+        IsSaving = false;
+        SaveMessage = newStory.Title + " sparades! Logga in om du vill spara dina sagor till din egna profil framöver!";
+        StorySaved = true;
+    }
+
+    bool ShowSaveAndContinueReadingButtons = false;
+    bool ShowFinishButton = true;
+
+    private void Finish()
+    {
+        ShowSaveAndContinueReadingButtons = true;
+        ShowFinishButton = false;
+    }
+
+    private void Back()
+    {
+        ShowSaveAndContinueReadingButtons = false;
+        ShowFinishButton = true;
+    }
+
+    private async Task GenerateTitle(Story story)
+    {
+        story.Title = await OpenAIService.GenerateResponseAsync("Generera en passande titel för denna berättelse, runt 3-4 ord endast, utan citattecken eller annat runt: " + StoryService.WholeStory);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authenticationState = await authenticationStateTask;
+        var _userName = authenticationState.User.Identity.Name;
+        userName = _userName;
+    }
+
+    private async Task GenerateMore()
+    {
+        ShowFinishButton = false;
+        IsLoading = true;
+        StoryService.WholeStory +=  Environment.NewLine + await OpenAIService.GenerateResponseAsync("Fortsätt på följande saga med ett fortsatt äventyr för karaktärerna: " + StoryService.WholeStory);
+        IsLoading = false;
+        ShowFinishButton = true;
+    }
+}

@@ -1,0 +1,138 @@
+﻿/*Huvudknapp*/
+.btn-primary {
+    color: #000;
+    background-color: rgba(249, 246, 241, 1);
+    border-color: #e0e0d1;
+}
+
+    .btn-primary:hover {
+        color: #000;
+        background-color: rgba(238, 234, 226, 1);
+        border-color: #d1d1be;
+    }
+
+    /*    .btn-primary:focus {
+        box-shadow: 0 0 0 0.2rem rgba(49, 132, 253, 0.5);
+    }*/
+
+    .btn-primary:active {
+        color: #000;
+        background-color: #c6c98b;
+        border-color: #c6c98b;
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    }
+
+    .btn-primary:disabled {
+        color: #fff;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+    }
+
+/*Sekundärknapp*/
+.btn-secondary {
+    color: rgba(249, 246, 241, 1);
+    background-color: rgba(91, 89, 60, 1);
+    border-color: #5B593C;
+}
+
+    .btn-secondary:hover {
+        color: #000;
+        background-color: #8b885c;
+        border-color: #d1d1be;
+    }
+
+    /*    .btn-secondary:focus {
+        box-shadow: 0 0 0 0.2rem rgba(49, 132, 253, 0.5);
+    }*/
+
+    .btn-secondary:active {
+        color: #000;
+        background-color: #579c3e;
+        border-color: #77cc58;
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    }
+
+    .btn-secondary:disabled {
+        color: #fff;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+    }
+
+/*Skapa saga knapp*/
+/*.btn-skapasaga {
+    color: rgba(249, 246, 241, 1);
+    background-color: rgba(91, 89, 60, 1);
+    border-color: #5B593C;
+    border-radius: 30px;
+    width: 300px;
+    margin: 10%;
+    height:auto;
+}
+
+    .btn-skapasaga:hover {
+        color: #000;
+        background-color: #8b885c;
+        border-color: #d1d1be;
+    }*/
+
+    /*    .btn-skapasaga:focus {
+        box-shadow: 0 0 0 0.2rem rgba(49, 132, 253, 0.5);
+    }*/
+
+    /*.btn-skapasaga:active {
+        color: #000;
+        background-color: #579c3e;
+        border-color: #77cc58;
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    }
+
+    .btn-skapasaga:disabled {
+        color: #fff;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+    }
+
+.skapasaga-img {*/ /*Bild i skapasaga knappen*/
+    /*width: 20px;
+}*/
+
+/*Stor knapp*/
+.bigKnapp {
+    color: rgba(249, 246, 241, 1);
+    background-color: rgba(91, 89, 60, 1);
+    border-color: #5B593C;
+    border-radius: 30px;
+    /*    color: #000;*/
+    /*    background-color: #60d680;*/
+    /*    border-color: #60d680;*/
+    width: 300px;
+    height: 100px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+    .bigKnapp:hover {
+        color: #000;
+        background-color: #8b885c;
+        border-color: #d1d1be;
+    }
+
+    /*    .bigKnapp:focus {
+        box-shadow: 0 0 0 0.2rem rgba(49, 132, 253, 0.5);
+    }*/
+
+    .bigKnapp:active {
+        color: #000;
+        background-color: #b1de59;
+        border-color: #b1de59;
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    }
+
+    .bigKnapp:disabled {
+        color: #fff;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+    }

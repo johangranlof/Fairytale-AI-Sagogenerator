@@ -1,0 +1,44 @@
+﻿@charset "UTF-8";
+/*Footer*/
+.paintSlott {
+    width: 188.36px;
+    height: 191px;
+}
+
+.topfooter {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    justify-content: space-between;
+}
+
+.bottomfooter {
+    align-items: center;
+    border-top: 0.5px solid grey;
+    display: flex;
+    padding-top: 10px;
+    padding-top: 10px;
+    justify-content: space-between;
+}
+
+.footermenu a {
+    display: block;
+    padding: 4px 0;
+    text-decoration: none;
+    color: #333; /* Farg pa lanktext */
+    position: relative;
+}
+
+    .footermenu a::before {
+        position: absolute;
+        left: 0px; /* Avstand fran vansterkant */
+    }
+
+.footer-container {
+    background-color: rgba(230, 233, 215, 1);
+    width: 100%;
+    padding-right: 15%;
+    padding-left: 15%;
+    /*    margin-right: auto;
+    margin-left: auto;*/
+}

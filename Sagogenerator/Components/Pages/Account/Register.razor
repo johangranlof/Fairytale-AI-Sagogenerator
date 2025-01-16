@@ -1,0 +1,65 @@
+﻿@page "/registrera"
+@rendermode InteractiveServer
+@using Sagogenerator.Data
+@using Sagogenerator.Models.ViewModels
+@using Sagogenerator.Components.CreatingStory
+@using Sagogenerator.Models.Entities
+@using System.Collections.Generic
+@using Microsoft.AspNetCore.Components
+@inject AppDbContext DB
+@inject NavigationManager navigationManager
+@inject IJSRuntime JsRuntime
+
+
+<PageTitle>Registrera</PageTitle>
+<div class="reg-login-container row fixed-width-input" style="background-image: url(../Images/register.png)">
+    <div class="col-lg-4 pt-4 pb-4" style="margin-bottom: 10rem">
+        <div class="mb-3 text-center flex-column">
+            <h3>Registrera</h3>
+        </div>
+        <EditForm Model ="@newUser" OnValidSubmit="CreateAccount" FormName="registerForm">
+            <div class="mb-3 mt-5">
+                <label>Användarnamn</label>
+                <InputText @bind-Value="newUser.Username" class="form-control" placeholder="Välj ditt användarnamn..." />
+            </div>
+            <div class="mb-3">
+                <label>Lösenord</label> 
+                <InputText @bind-Value="newUser.Password" class="form-control" type="password" placeholder="Välj ditt lösenord..." />
+            </div>
+            <div class="text-danger text-center position-absolute">@errorMessage</div>
+            <br>
+            <div class="mb-3 d-grid gap-2">
+                <button type="submit" class="btn btn-dark">Skapa konto</button>
+            </div>
+            <div class="justify-content-between">
+                <em class="text-secondary font-italic font-weight-bold">Har du redan ett konto?</em>
+                <a href="/logga-in" style="color: black; font-style: italic;">Logga in</a>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    public User newUser = new User();
+
+    private string? errorMessage;
+
+    private async Task CreateAccount()
+    {
+        var existingAccount = DB.Users.Where(x => x.Username == newUser.Username).FirstOrDefault();
+        if (newUser.Password is null || newUser.Password.Length < 8)
+        {
+            errorMessage = "Lösenordet måste vara 8+ tecken. ";
+            return;
+        }
+        else if (existingAccount != null)
+        {
+            errorMessage = "Användarnamnet finns redan.";
+            return;
+        }
+        DB.Users.Add(newUser);
+        await DB.SaveChangesAsync();
+        navigationManager.NavigateTo("/logga-in");
+        await JsRuntime.InvokeVoidAsync("alert", "Ditt konto har skapats! Du kan nu logga in");
+    }
+}

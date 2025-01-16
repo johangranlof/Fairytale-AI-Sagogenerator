@@ -1,0 +1,71 @@
+﻿@page "/logga-in"
+@using Sagogenerator.Components.Services
+@using Sagogenerator.Data
+@using Sagogenerator.Models.ViewModels
+@using System.Security.Claims
+@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Authentication.Cookies
+@inject AppDbContext DB
+@inject NavigationManager navigationManager
+
+
+<PageTitle>Logga in</PageTitle>
+<div class="reg-login-container row fixed-width-input" style="background-image: url(../Images/login.png)">
+    <div class="col-lg-4 pt-4 pb-4" style="margin-bottom: 10rem">
+        <EditForm Model="@Model" OnValidSubmit="Authenticate" FormName="LoginForm">
+            <DataAnnotationsValidator />
+            <div class="text-center flex-column">
+                <h3>Logga in</h3>
+            </div>
+            <div class="mb-3 mt-5">
+                <label>Användarnamn</label>
+                <InputText @bind-Value="Model.Username" class="form-control" placeholder="Fyll i ditt användarnamn..." />
+                <ValidationMessage For="() => Model.Username" />
+            </div>
+            <div class="mb-3">
+                <label>Lösenord</label>
+                <InputText @bind-Value="Model.Password" class="form-control" type="password" placeholder="Fyll i ditt lösenord..." />
+                <ValidationMessage For="() => Model.Password" />
+            </div>
+            <div class="text-danger text-center position-absolute">@errorMessage</div>
+            <br>
+            <div class="mb-3 d-grid gap-4">
+                <button type="submit" class="btn btn-dark">Logga in</button>
+            </div>
+            <div class="spacebtw">
+                <em class="text-secondary font-italic font-weight-bold">Har du inget konto?</em>
+                <a href="/registrera" style="color: black; font-style: italic;">Skapa konto</a>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public HttpContext? HttpContext { get; set; }
+
+    [SupplyParameterFromForm]
+    public LogInViewModel Model { get; set; } = new();
+
+    private string? errorMessage;
+
+    private async Task Authenticate()
+    {
+        var userAccount = DB.Users.Where(x => x.Username == Model.Username).FirstOrDefault();
+        if(userAccount is null || userAccount.Password != Model.Password)
+        {
+            errorMessage = "Fel användarnamn eller lösenord. ";
+            return;
+        }
+
+        var claims = new List<Claim>
+        {
+            new Claim(ClaimTypes.Name, Model.Username)
+        };
+
+        var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+        var principal = new ClaimsPrincipal(identity);
+        await HttpContext.SignInAsync(principal);
+        navigationManager.NavigateTo("/min-profil");
+    }
+}

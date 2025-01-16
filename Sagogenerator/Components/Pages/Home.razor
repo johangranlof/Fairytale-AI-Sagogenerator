@@ -1,0 +1,88 @@
+﻿@page "/"
+@using Sagogenerator.Data
+@using Sagogenerator.Models.Entities
+@using Microsoft.Extensions.Configuration
+@inject AppDbContext DB
+@inject NavigationManager navigationManager
+
+<PageTitle>Home</PageTitle>
+
+<div class="container col-xxl-8 px-4 py-4 mt-5">
+    <div class="row flex-lg-row-reverse align-items-center g-6 py-5">
+        <div class="col-10 col-sm-8 col-lg-6 mt-5">
+            <img src="Images/flicka.png" class="d-block mx-lg-auto img-fluid ms-5" alt="" width="250" height="250">
+        </div>
+        <div class="col-lg-6">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Välkommen...</h1>
+            <p class="lead">Vår AI-sagogenerator är en innovativ plattform som utnyttjar AI för att skapa berättelser baserade på dina val av genre, karaktärer och miljö. Perfekt för barn, pedagoger och drömmare likväl, erbjuder AI-sagogeneratorn oändliga möjligheter att väcka fantasin till liv och låta dina berättelser blomstra.</p>
+            <div class=" d-grid gap-2 d-md-flex justify-content-md-start">
+                <a href="/skapa-saga" type="button" class="btn btn-skapasaga">Skapa saga <img class="skapasaga-img" src="/Images/pappersflygplan.png" alt="Pappersflygplan" /></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<img src="Images/Grön Brytare.png" class="" alt="" width="100%" height="20">
+<div class="groncontainer">
+        <h2 class="KollaIn">Kolla in våra sagor som redan finns</h2>
+        <img src="Images/KrumelurPil.png" class="krumelurpil" alt="">
+    <div class="card-wrapper">
+        @foreach (var story in Stories)
+        {
+            <a class="cardx nav-link" href="/läs-saga/@story.Id">
+                <div class="card-image-container">
+                    <img src="@story.Img" alt="Story Image" class="card-image">
+                </div>
+                <p class="card-title">@story.Title</p>
+                <p class="card-des">@story.Content</p>
+                <p class="pt-2">Läs sagan här &rarr;</p>
+            </a>
+        }
+    </div>
+</div>
+<img src="Images/Grön Brytare.png" class="" alt="" width="100%" height="20">
+
+@code {
+
+    ICollection<Story> Stories { get; set; }
+
+    protected override void OnInitialized()
+    {
+        var storiesWithoutUser = DB.Stories.Where(story => story.User == null).ToList();
+        Random random = new Random();
+        var shuffledStories = storiesWithoutUser.OrderBy(x => random.Next()).ToList();
+        Stories = shuffledStories.Take(4).ToList();
+    }
+}
+
+ <div class="card-wrapper">
+    <div class="price-card">
+        <p class="price-card-title">Företag</p>
+        <p class="card-des"> <span class="price">Enl avtal</span>/m/kv/år</p>
+        <p class="price-card-des">Denna passar sjukvården, kriminalvården, förskolan</p>
+        <ul class="check-list">
+            <li><img class="check-img" src="Images\check.png" alt="check"> Spara Sagor</li>
+            <li><img class="check-img" src="Images\check.png" alt="check"> Skapa oändligt med sagor</li>
+            <li><img class="check-img" src="Images\check.png" alt="check"> Få tillgång till andra sparade sagor</li>
+            <li><img class="check-img" src="Images\check.png" alt="check"> Bilder till böckerna</li>
+        </ul>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <a href="/skapa-saga" type="button" class="btn btn-komigang btn-lg px-4 me-md-2">Kom igång</a>
+        </div>
+    </div>
+
+    <div class="price-card">
+        <p class="price-card-title">Privatperson</p>
+        <p class="card-des"><span class="price">79kr</span>/månaden</p>
+        <p class="price-card-des">Denna passar dig som förälder som med ditt barn vill utforska världar till fullo av fantasi där sagor vävs av AI</p>
+        <ul class="check-list">
+            <li><img class="check-img" src="Images\check.png" alt="check"> Spara Sagor</li>
+            <li><img class="check-img" src="Images\check.png" alt="check"> Skapa oändligt med sagor</li>
+            <li><img class="check-img" src="Images\check.png" alt="check"> Få tillgång till andra sparade sagor</li>
+            <li><img class="check-img" src="Images\check.png" alt="check"> Bilder till böckerna</li>
+        </ul>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <a href="/skapa-saga" type="button" class="btn btn-komigang btn-lg px-4 me-md-2">Kom igång</a>
+        </div>
+    </div>
+</div>

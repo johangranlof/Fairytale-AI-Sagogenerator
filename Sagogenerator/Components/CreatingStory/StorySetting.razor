@@ -1,0 +1,88 @@
+﻿<div class="row d-flex justify-content-center">
+    <div class="card" @onclick='() => CardClick("Borås")'>
+        <img src="/Images/borås.png" alt="borås">
+        <div class="card-text">Borås</div>
+    </div>
+
+    <div class="card" @onclick='() => CardClick("Djungel")'>
+        <img src="/Images/Djungel2.jpg" alt="djungel">
+        <div class="card-text">Djungel</div>
+    </div>
+
+    <div class="card" @onclick='() => CardClick("Rymden")'>
+        <img src="/Images/Rymden.jpg" alt="rymden">
+        <div class="card-text">Rymden</div>
+    </div>
+
+    <div class="card" @onclick='() => CardClick("Havet")'>
+        <img src="/Images/Havet.jpg" alt="havet">
+        <div class="card-text">Havet</div>
+    </div>
+
+    <div class="card" @onclick='() => CardClick("Fjällen")'>
+        <img src="/Images/Fjällen.jpg" alt="fjällen">
+        <div class="card-text">Fjällen</div>
+    </div>
+
+    <div class="card" @onclick='() => CardClick("Bondgård")'>
+        <img src="/Images/Bondgård.jpg" alt="bondgård">
+        <div class="card-text">Bondgård</div>
+    </div>
+
+        <div class="card" @onclick='() => CardClick("Fängelse")'>
+        <img src="/Images/fängelse.png" alt="Fängelse">
+        <div class="card-text">Fängelse</div>
+    </div>
+
+    <div class="card" @onclick='() => CardClick("Sjukhus")'>
+        <img src="/Images/sjukhus.png" alt="Sjukhus">
+        <div class="card-text">Sjukhus</div>
+    </div>
+</div>
+
+<h4 class="text-center mt-5">Eller välj själv..</h4>
+<div class="papper container d-flex justify-content-center align-items-center">
+    <form class="mb-5 mt-2">
+@*         <label class="fw-bold d-block text-center">Eller välj själv..</label> *@
+        <input type="text" class="form-control form-control-dark" @bind="Input">
+        <div class="container d-flex justify-content-center align-items-center mt-2">
+            <button type="button" class="btn btn-primary" @onclick="ChooseTheme">Lägg till</button>
+        </div>
+    </form>
+</div>
+
+<div class="container d-flex justify-content-center align-items-center mt-2">
+    @if (!string.IsNullOrWhiteSpace(selectedCard))
+    {
+        <p class="fw-bold text-success">Din valda miljö är @selectedCard</p>
+    }
+</div>
+
+@code
+{
+    [Parameter]
+    public Action<string> OnSettingSelected { get; set; }
+
+    string selectedCard = "";
+    string Input = "";
+
+    void CardClick(string cardtype)
+    {
+        selectedCard = cardtype;
+        OnSettingSelected?.Invoke(selectedCard);
+    }
+
+    private void ChooseTheme()
+    {
+        if (!string.IsNullOrWhiteSpace(Input))
+        {
+            selectedCard = Input;
+            OnSettingSelected?.Invoke(selectedCard);
+            Input = ""; // Nollställ inmatningsfältet efter att temat har lagts till
+        }
+        else
+        {
+            // Lägg till lämplig hantering om ingen input finns.
+        }
+    }
+}

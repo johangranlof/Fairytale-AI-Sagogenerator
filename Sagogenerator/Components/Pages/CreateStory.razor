@@ -1,0 +1,245 @@
+﻿@page "/skapa-saga"
+@rendermode InteractiveServer
+@using Sagogenerator.Components.CreatingStory
+@using Sagogenerator.Components.Services
+@using Sagogenerator.Models.Entities
+@using System.Collections.Generic
+@using Microsoft.AspNetCore.Components
+@using System.Text
+@inject Data.AppDbContext DB
+@inject NavigationManager NavigationManager
+@inject OpenAIService OpenAiService
+@inject IStoryService StoryService
+
+
+
+<PageTitle>Skapa saga</PageTitle>
+<h2 class="text-center mt-4">Skapa en ny saga</h2>
+<Stepper ActiveStep="@ActiveStep" />
+<div class="container mt-3 d-flex justify-content-center">
+    <div class="col-auto">
+        <label for="languageDropdown">Choose a Language:</label>
+        <InputSelect @bind-Value="selectedLanguage">
+            @foreach (var language in Language.Languages)
+            {
+                <option value="@language.Name">@language.Name</option>
+            }
+        </InputSelect>
+    </div>
+    <div class="col-auto ml-auto">  </div>
+</div>
+@if (ActiveStep == 1)
+{
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="justify-content-center text-center">
+                <div>
+                    <h4 class="text-lg">Välj kanske någon av dessa kategorier..</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <GenrePicker OnGenresSelected="HandleGenresSelected" />
+    
+
+}
+else if (ActiveStep == 2)
+{
+    <CharacterCreation OnCharacterSaved="HandleCharacterSaved"
+                       OnOtherCharacterSaved="HandleOtherCharacterSaved" />
+}
+else if (ActiveStep == 3)
+{
+    <StorySetting OnSettingSelected="HandleSettingSelected" />
+}
+
+else if (ActiveStep == 4)
+{
+    <div class="container mt-5 sammanfattning">
+        <div class="stortpapper">
+            <div class="stortpapper-content">
+            <h2>Sammanfattning av dina val</h2>
+
+            <h5>Kategorier:</h5>
+            <ul>
+                @foreach (var genre in selectedGenres)
+                {
+                    <li>@genre.Name</li>
+                }
+            </ul>
+
+            <h5>Miljö:</h5>
+            <p>@selectedSetting</p>
+
+            <h5>Språk:</h5>
+            <p>@selectedLanguage</p>
+
+            @if (savedCharacter != null)
+            {
+                <h5>Sparad karaktär:</h5>
+                <p>@savedCharacter.Name är @savedCharacter.Gender.ToLower() och @savedCharacter.Age år gammal.<br/>Det som gör @savedCharacter.Name extra speciell är egenskapen: @savedCharacter.ExtraQuality.ToLower()</p>
+            }
+
+            @if (savedOtherCharacter != null)
+            {
+                <h5>Sparad annan karaktär:</h5>
+                <p>@savedOtherCharacter.Name är @savedOtherCharacter.Gender.ToLower() och @savedOtherCharacter.Age år gammal. @savedOtherCharacter.Name är @savedCharacter.Name's @savedOtherCharacter.RelationToMainCharacter.ToLower()</p>
+            }
+            </div>
+        </div>
+
+        <div class="barn-container">
+            <img src="Images/läsandebarn.png" class="img-fluid barn" alt="nalle">
+        </div>
+    </div>
+
+    <div>
+        @if (IsLoading == true)
+        {
+            <LoadingSpinner IsLoading="IsLoading" />
+        }
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a @onclick="CallOpenAIAPI" class="btn bigKnapp">Slutför</a>
+            </div>
+        </div>
+    </div>
+}
+
+
+@if (ActiveStep != 4)
+{
+    <div class="row justify-content-center mt-3 mb-5">
+        <div class="col-auto">
+            <button type="button" class="btn btn-tillbaka" @onclick="LastStep">Tillbaka</button>
+        </div>
+        <div class="col-auto">
+            <button type="button" class="btn btn-secondary" @onclick="NextStep">Fortsätt</button>
+        </div>
+    </div>
+}
+
+@code {
+    int ActiveStep = 1;
+    bool ShowGenrePicker = true;
+    bool IsLoading = false;
+    private string selectedLanguage = Language.Languages.FirstOrDefault()?.Name;
+    public string savedLanguage { get; private set; }
+
+
+    List<Genre> selectedGenres = new List<Genre>();
+    List<Language> selectedLanguages = new List<Language>();
+    string selectedSetting = "";
+    Character savedCharacter;
+    OtherCharacter savedOtherCharacter;
+
+    private string QueryToBot = "";
+
+
+
+
+    public async Task CallOpenAIAPI()
+    {
+        try
+        {
+            IsLoading = true;
+            QueryToBot = GenerateQuery(selectedGenres, selectedLanguage, selectedSetting, savedCharacter, savedOtherCharacter);
+            StoryService.WholeStory = await OpenAiService.GenerateResponseAsync(QueryToBot);
+        }
+        catch (Exception ex)
+        {
+            StoryService.WholeStory = $"Ett fel inträffade: {ex.Message}";
+        }
+        finally
+        {
+            IsLoading = false;
+            NavigationManager.NavigateTo("/se-saga");
+
+        }
+    }
+
+    void NextStep()
+    {
+        if (ActiveStep != 4)
+        {
+            ActiveStep++;
+            ShowGenrePicker = false;
+        }
+    }
+
+    void LastStep()
+    {
+        if (ActiveStep != 1)
+        {
+            ActiveStep = ActiveStep - 1;
+        }
+    }
+
+    void HandleSettingSelected(string setting)
+    {
+        selectedSetting = setting;
+    }
+
+    void HandleGenresSelected(List<Genre> genres)
+    {
+        selectedGenres = genres;
+    }
+    void HandleLanguage(List<Language> languages)
+    {
+        selectedLanguage = languages.ToString();
+    }
+
+    void HandleCharacterSaved(Character character)
+    {
+        savedCharacter = character;
+    }
+
+    void HandleOtherCharacterSaved(OtherCharacter otherCharacter)
+    {
+        savedOtherCharacter = otherCharacter;
+    }
+
+    private string GenerateQuery(List<Genre> selectedGenres, string selectedLanguge, string selectedSetting, Character mainCharacter, OtherCharacter otherCharacter)
+    {
+        StringBuilder storyBuilder = new StringBuilder();
+
+        storyBuilder.AppendLine($"Skriv sagan endast på {selectedLanguage}. Skapa en barnsaga med de angivna kriterierna och integrera de sömlöst i berättelsen och ha goda budskap kring möjliga jobbiga ämnen som begreppen i kriterierna kan innehålla. Berätta först en spännande öppning som introducerar huvudkaraktären, den valda miljön och eventuella andra karaktärer. Den ska vara ungefär 500 ord lång. Skriv inte titel.");
+        storyBuilder.AppendLine("Genrer:");
+        foreach (var genre in selectedGenres)
+        {
+            storyBuilder.AppendLine("- " + genre.Name.ToString());
+        }
+        storyBuilder.AppendLine();
+
+        foreach (var language in selectedLanguge)
+        {
+            storyBuilder.AppendLine("Språk: " + language);
+        }
+        storyBuilder.AppendLine();
+
+
+        // Lägg till vald miljö till historien
+        storyBuilder.AppendLine("Miljö: " + selectedSetting);
+        storyBuilder.AppendLine();
+
+        storyBuilder.AppendLine("Språk: " + selectedLanguge);
+        storyBuilder.AppendLine();
+
+        // Lägg till detaljer om huvudkaraktären till historien
+        storyBuilder.AppendLine("Huvudkaraktär:");
+        storyBuilder.AppendLine("- Namn: " + mainCharacter.Name);
+        storyBuilder.AppendLine("- Ålder: " + mainCharacter.Age);
+        storyBuilder.AppendLine("- Kön: " + mainCharacter.Gender);
+        storyBuilder.AppendLine("- Extra Egenskap: " + mainCharacter.ExtraQuality);
+        storyBuilder.AppendLine();
+
+        // Lägg till detaljer om andra karaktärer till historien
+        storyBuilder.AppendLine("Annan Karaktär:");
+        storyBuilder.AppendLine("- Namn: " + otherCharacter.Name);
+        storyBuilder.AppendLine("- Ålder: " + otherCharacter.Age);
+        storyBuilder.AppendLine("- Kön: " + otherCharacter.Gender);
+        storyBuilder.AppendLine("- Relation till Huvudkaraktär: " + otherCharacter.RelationToMainCharacter);
+
+        return storyBuilder.ToString();
+    }
+}

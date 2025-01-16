@@ -1,0 +1,19 @@
+﻿<div class="stepper">
+    @for (int i = 1; i < Steps.Count + 1; i++)
+    {
+        <div class="step-container">
+            <button class="step @(i == ActiveStep ? "active" : "")">
+                <span class="step-number">@i</span>
+            </button>
+            <div class="step-label">@StepLabels[i - 1]</div>
+        </div>
+    }
+</div>
+
+@code {
+    private List<string> Steps = new List<string> { "1", "2", "3", "4" };
+    private List<string> StepLabels = new List<string> { "Kategori", "Karaktär", "Miljö", "Slutför" };
+
+    [Parameter]
+    public int ActiveStep { get; set; }
+}

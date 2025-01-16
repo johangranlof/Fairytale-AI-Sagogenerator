@@ -1,0 +1,68 @@
+﻿@using Models.Entities
+
+<div class="row justify-content-center mb-5">
+    <div class="col-auto mt-2 character-container">
+        <h2 class="mt-5">Huvudkaraktär</h2>
+        <form class="mb-2 mt-2">
+            <label class="fw-bold">Namn</label>
+            <input type="text" class="form-control form-control-dark" @bind="character.Name">
+
+            <label class="fw-bold">Ålder</label>
+            <input type="number" min="0" class="form-control form-control-dark" @bind="character.Age">
+
+            <label class="fw-bold">Kön</label>
+            <input type="text" class="form-control form-control-dark" @bind="character.Gender">
+
+            <label class="fw-bold">Extra karaktärsdrag</label>
+            <input type="text" class="form-control form-control-dark" @bind="character.ExtraQuality">
+        </form>
+    </div>
+
+    <div class="col-auto mt-2 character-container">
+        <h2 class="mt-5">Annan karaktär</h2>
+        <form class="mb-2 mt-2">
+            <label class="fw-bold">Namn</label>
+            <input type="text" class="form-control form-control-dark" @bind="otherCharacter.Name">
+
+            <label class="fw-bold">Ålder</label>
+            <input type="number" min="0" class="form-control form-control-dark" @bind="otherCharacter.Age">
+
+            <label class="fw-bold">Kön</label>
+            <input type="text" class="form-control form-control-dark" @bind="otherCharacter.Gender">
+
+            <label class="fw-bold">Relation till huvudkaraktär</label>
+            <input type="text" class="form-control form-control-dark" @bind="otherCharacter.RelationToMainCharacter">
+        </form>
+    </div>
+</div>
+
+@code {
+    // Define events for character and otherCharacter
+    [Parameter]
+    public EventCallback<Character> OnCharacterSaved { get; set; }
+    [Parameter]
+    public EventCallback<OtherCharacter> OnOtherCharacterSaved { get; set; }
+
+    // Fields for character and otherCharacter
+    Character character = new Character
+        {
+            Name = "Kalle",
+            Age = 5,
+            Gender = "Kille",
+            ExtraQuality = "Snäll"
+        };
+    OtherCharacter otherCharacter = new OtherCharacter
+        {
+            Name = "Kajsa",
+            Age = 5,
+            Gender = "Tjej",
+            RelationToMainCharacter = "Syster"
+        };
+
+    // Lifecylce method to send back data to parent component
+    protected override async Task OnInitializedAsync()
+    {
+        await OnCharacterSaved.InvokeAsync(character);
+        await OnOtherCharacterSaved.InvokeAsync(otherCharacter);
+    }
+}

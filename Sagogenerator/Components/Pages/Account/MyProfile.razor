@@ -1,0 +1,63 @@
+﻿@using Sagogenerator.Data
+@using Sagogenerator.Models.Entities
+@using System.Security.Claims;
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject AppDbContext DB
+@inject NavigationManager navigationManager
+@page "/min-profil"
+<PageTitle>Min Profil</PageTitle>
+
+<AuthorizeView>
+    <NotAuthorized>
+        <div class="text-center mt-3"<h1>Du är inte inloggad!</h1></div>
+    </NotAuthorized>
+    <Authorized>
+        <div class="text-center mt-3"<h1>Välkommen till din profil, @userName!</h1></div>
+
+        <img src="Images/Grön Brytare.png" class="" alt="" width="100%" height="20">
+        <div class="groncontainer">
+            <h2 class="KollaIn">Här kan du läsa dina sparade sagor</h2>
+            <img src="Images/KrumelurPil.png" class="krumelurpil" alt="">
+            <div class="card-wrapper">
+                @foreach (var story in UserStories)
+                {
+                    <a class="cardx nav-link" href="/läs-saga/@story.Id">
+                        <div class="card-image-container">
+                            <img src="@(story.Img != null ? story.Img : "/path/till/generiskbild.jpg")" alt="Story Image" class="card-image">
+                        </div>
+                        <p class="card-title">@story.Title</p>
+                        <p class="card-des">@story.Content</p>
+                        <p class="pt-2">Läs sagan här &rarr;</p>
+                    </a>
+                }
+            </div>
+        </div>
+        <img src="Images/Grön Brytare.png" class="" alt="" width="100%" height="20">
+    </Authorized>
+</AuthorizeView>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+    string? userName;
+
+    ICollection<Story> UserStories { get; set; }
+
+    public List<Story> GetStoriesForUser(string userName)
+    {
+        var userStories = DB.Users
+            .Where(u => u.Username == userName)
+            .SelectMany(u => u.Stories)
+            .ToList();
+
+        return userStories;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authenticationState = await authenticationStateTask;
+        var _userName = authenticationState.User.Identity.Name;
+        userName = _userName;
+        UserStories = GetStoriesForUser(userName);
+    }
+}
